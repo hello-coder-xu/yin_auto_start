@@ -51,3 +51,6 @@ step 3
       }
     }
  
+ native project:
+ 
+    https://github.com/judemanutd/AutoStarter

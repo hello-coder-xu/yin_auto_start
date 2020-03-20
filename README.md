@@ -8,7 +8,7 @@ Wrap native library to implement flutter jump from startup page
 step 1
 
     dependencies:
-  	    auto_start: ^0.0.1
+  	    autostart: ^0.0.1
 
 step 2
     

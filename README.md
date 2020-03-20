@@ -1,15 +1,53 @@
 # autostart
 
-A new Flutter plugin.
+Wrap native library to implement flutter jump from startup page
 
 ## Getting Started
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
-# yin_auto_start
+step 1
+
+    dependencies:
+  	    yin_auto_start: ^0.0.1
+
+step 2
+    
+    import 'package:autostart/autostart.dart';
+    
+   
+step 3
+        
+    class MyApp extends StatefulWidget {
+      @override
+      _MyAppState createState() => _MyAppState();
+    }
+    
+    class _MyAppState extends State<MyApp> {
+      @override
+      Widget build(BuildContext context) {
+        return MaterialApp(
+          home: Scaffold(
+            appBar: AppBar(
+              title: const Text('auto start manage test'),
+            ),
+            body: Center(
+              child: GestureDetector(
+                onTap: () => checkAutoStartManager(context),
+                child: Text('to auto start manager'),
+              ),
+            ),
+          ),
+        );
+      }
+    
+      void checkAutoStartManager(BuildContext context) async {
+        bool isAutoStartPermissionAvailable = await Autostart.isAutoStartPermissionAvailable;
+        if (isAutoStartPermissionAvailable) {
+          print('test available ok');
+          Autostart.getAutoStartPermission();
+        } else {
+          print('test available fail');
+        }
+      }
+    }
+ 

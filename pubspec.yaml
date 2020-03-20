@@ -1,8 +1,9 @@
 name: autostart
-description: A new Flutter plugin.
+description: flutter auto start
 version: 0.0.1
-author:
-homepage:
+author: yin <yin_8023@163.com>
+homepage: https://github.com/yx544806988/yin_auto_start.git
+
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
